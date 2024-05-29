@@ -1,0 +1,22 @@
+{
+    "name":  "@0401/1408",
+    "version": "0.0.1",
+    "author": "zhouli",
+    "description": "123其味无穷",
+    "labels": [
+        "vmessenger",
+        "12345678901234567890123456789012345678901234567890",
+        "123其味123其味无穷123其味无穷无穷",
+        "2222"
+    ],
+    "platforms": [
+        {
+            "name": "SylixOS",
+            "arch": "noarch",
+            "minSupportedVersion": "8.1+",
+            "blobs": [
+                "airpressure_server.tar"
+            ]
+        }
+    ]
+}

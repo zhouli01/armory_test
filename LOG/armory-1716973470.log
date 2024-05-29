@@ -1,0 +1,222 @@
+2024-05-29 17:04:31,602 - INFO - armory 查看帮助：
+Usage: armory [command] [options]
+
+Armory client for package management!
+
+Options:
+  -v --version                                                    Show the armory client version information
+  -h, --help                                                      display help for command
+
+Commands:
+  init <packageName>                                              Create package fixed directory structure and armory.json file.
+  login [options]                                                 Login to armory using ECMP account
+  logout                                                          Logout from armory
+  publish [options] [json]                                        Publish a package to armory
+  dep                                                             Manager package version dependency.
+  get [options] <package-spec (with version,platform,arch,etc.)>  Get package from armory
+  config                                                          Manage armory configuration
+  repo                                                            Manage armory repository
+  search [options] [keyword]                                      Search the armory repository for packages
+  whoami                                                          Display the current login account
+  version                                                         Armory client self version management
+  tag                                                             Manage package dist-tag
+  help [command]                                                  display help for command
+
+2024-05-29 17:04:32,008 - INFO - armory -v 查看版本号：
+1.5.2
+
+2024-05-29 17:04:32,393 - INFO - armory --version 查看版本号：
+1.5.2
+
+2024-05-29 17:04:32,773 - INFO - armory -h 查看帮助：
+Usage: armory [command] [options]
+
+Armory client for package management!
+
+Options:
+  -v --version                                                    Show the armory client version information
+  -h, --help                                                      display help for command
+
+Commands:
+  init <packageName>                                              Create package fixed directory structure and armory.json file.
+  login [options]                                                 Login to armory using ECMP account
+  logout                                                          Logout from armory
+  publish [options] [json]                                        Publish a package to armory
+  dep                                                             Manager package version dependency.
+  get [options] <package-spec (with version,platform,arch,etc.)>  Get package from armory
+  config                                                          Manage armory configuration
+  repo                                                            Manage armory repository
+  search [options] [keyword]                                      Search the armory repository for packages
+  whoami                                                          Display the current login account
+  version                                                         Armory client self version management
+  tag                                                             Manage package dist-tag
+  help [command]                                                  display help for command
+
+2024-05-29 17:04:33,150 - INFO - armory --help 查看帮助：
+Usage: armory [command] [options]
+
+Armory client for package management!
+
+Options:
+  -v --version                                                    Show the armory client version information
+  -h, --help                                                      display help for command
+
+Commands:
+  init <packageName>                                              Create package fixed directory structure and armory.json file.
+  login [options]                                                 Login to armory using ECMP account
+  logout                                                          Logout from armory
+  publish [options] [json]                                        Publish a package to armory
+  dep                                                             Manager package version dependency.
+  get [options] <package-spec (with version,platform,arch,etc.)>  Get package from armory
+  config                                                          Manage armory configuration
+  repo                                                            Manage armory repository
+  search [options] [keyword]                                      Search the armory repository for packages
+  whoami                                                          Display the current login account
+  version                                                         Armory client self version management
+  tag                                                             Manage package dist-tag
+  help [command]                                                  display help for command
+
+2024-05-29 17:04:33,535 - INFO - armory help 查看帮助：
+Usage: armory [command] [options]
+
+Armory client for package management!
+
+Options:
+  -v --version                                                    Show the armory client version information
+  -h, --help                                                      display help for command
+
+Commands:
+  init <packageName>                                              Create package fixed directory structure and armory.json file.
+  login [options]                                                 Login to armory using ECMP account
+  logout                                                          Logout from armory
+  publish [options] [json]                                        Publish a package to armory
+  dep                                                             Manager package version dependency.
+  get [options] <package-spec (with version,platform,arch,etc.)>  Get package from armory
+  config                                                          Manage armory configuration
+  repo                                                            Manage armory repository
+  search [options] [keyword]                                      Search the armory repository for packages
+  whoami                                                          Display the current login account
+  version                                                         Armory client self version management
+  tag                                                             Manage package dist-tag
+  help [command]                                                  display help for command
+
+2024-05-29 17:04:33,959 - INFO - armory init 666 执行结果：
+Create 666/blobs directory...
+Generate 666/blobs/README.md...
+Generate 666/armory.json...
+Initialize successfully!
+
+2024-05-29 17:04:33,960 - INFO - 666 创建成功
+2024-05-29 17:04:33,960 - INFO - 666 删除成功
+2024-05-29 17:04:34,377 - INFO - armory init @test/666 执行结果：
+Create 666/blobs directory...
+Generate 666/blobs/README.md...
+Generate 666/armory.json...
+Initialize successfully!
+
+2024-05-29 17:04:34,377 - INFO - @test 创建成功
+2024-05-29 17:04:34,378 - INFO - @test 删除成功
+2024-05-29 17:04:37,843 - INFO - armory repo ls 执行结果见Picture目录下对应文件名截图
+2024-05-29 17:04:38,840 - INFO - armory repo use 执行结果：
+The repo QA is active now
+
+2024-05-29 17:04:39,383 - INFO - armory login 执行结果：
+Using repository: http://10.12.1.170:3001(QA)
+Config changed username :  => zhouli
+Config changed access_token :  => ***
+zhouli Login succeed!
+
+
+2024-05-29 17:04:39,774 - INFO - armory whoami 执行结果：
+zhouli
+
+2024-05-29 17:04:40,153 - INFO - armory config ls 执行结果：
+{
+    "repo_use": "QA",
+    "repo": {
+        "default": "http://127.0.0.1:3001",
+        "online": "http://10.7.1.31:3001",
+        "QA": "http://10.12.1.170:3001"
+    },
+    "username": "zhouli",
+    "access_token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwYXlsb2FkIjp7ImlkIjoxMCwicmVhbE5hbWUiOiJ6aCoqKmkiLCJ1c2VybmFtZSI6Inpob3VsaSIsInByb2ZpbGUiOm51bGwsImVtYWlsIjoiemhvdWxpQGFjb2luZm8uY29tIiwiaW1hZ2UiOm51bGwsInBlcm1pc3Npb25zIjpbIio6KiJdLCJyb2xlcyI6WyJnZW5lcmFsX3VzZXIiLCJhZG1pbiJdLCJyZWdpc3RlckRheSI6MTMsImRlcHROYW1lcyI6IiIsInJvbGVOYW1lcyI6IuaZrumAmueUqOaItyzlubPlj7DnrqHnkIblkZgiLCJzZXgiOiJ1bmtub3duIiwicGhvbmUiOiIiLCJhY2Nlc3NUb2tlbiI6ImV5SmhiR2NpT2lKU1V6STFOaUlzSW5SNWNDSTZJa3BYVkNJc0ltdHBaQ0k2SW5KellWOHhJbjAuZXlKMWMyVnlibUZ0WlNJNklucG9iM1ZzYVNJc0luTmpiM0JsSWpwYkltRnNiQ0pkTENKcFpDSTZJakV3SWl3aVpYaHdJam94TnpFMk9UZzBNamM0TENKcWRHa2lPaUpoWmpZMll6Z3pOUzAwTnpaakxUUmxZbUV0T1RrNVl5MDVOamd4WlRWa01HSTVZVFlpTENKamJHbGxiblJmYVdRaU9pSmhZMjlwYm1adlgzWnBjQ0lzSW5WelpYSnVZVzFsSWpvaWVtaHZkV3hwSW4wLmJISUlMT2VFN2pyM1FVeHVjZndPY0N0T3JISEZGUGQybGp1VE8xYklXZWJ6NzVfeEVTNXdBeGNJaFBscERfZkRUS0pkYktKaHRBWm5RZE5jWlkxSUw1N2M1dzRLSzNVeGNSMGVmR0xxR21rMzVERGJQU2prRkFuOHJnZHpJak5jU1QxQjdiS01QdGs5N1Fscy1mUkV4R3lsNnhpdVpPS1UxTzdfNVUteXM5RzFtQ3VhRnVJQ3JPb0VVSVowWWMxbEZ0S3RONGdEQnA1Sl85VE0wY25ETzFLX01FOXRFbGJOMENxSmRoX0tmWXdRckRKY0NVMG5zYjhIRThLM2V5a0U2VF8xVmJTc2ZLX3VhbTBQd2xaZnRUS2xfeV9ldkpUX2YzVVk3M3RYZmVsR0t3U1FVcFQ4WFNrckVjRTZhZG1VdWxuQW5rZWNmd2cwZ1cxOV82RmhydyJ9LCJpYXQiOjE3MTY5NzM0Nzh9.GZpSMnpMQ31K2rQBpXFz46c03lk2CJfzxEdiPchi4pY",
+    "executable_pkg_name": "armory-cli-executable",
+    "version_rollback": "1.5.2-test.5",
+    "disableProgressBar": "true"
+}
+
+2024-05-29 17:04:40,525 - INFO - armory version -h 执行结果：
+Usage: armory version [options] [command]
+
+Armory client self version management
+
+Options:
+  -h, --help        display help for command
+
+Commands:
+  update [version]  Switch armory client to use
+  rollback          Rollback to the earlier version
+  help [command]    display help for command
+
+2024-05-29 17:04:40,914 - INFO - armory version update 执行结果：
+
+2024-05-29 17:04:41,292 - INFO - armory config set 执行结果：
+
+2024-05-29 17:04:41,718 - INFO - armory publish 执行结果：
+Using json file: D:\360MoveData\Users\zhouli\Desktop\Armory-Auto\Client\armory.json
+Using repository: http://10.12.1.170:3001(QA)
+Checking armory.json configuration..
+Armory Error:  (10002)Version already exists.
+
+A complete log of this run can be found in:
+C:\Users\zhouli\.armory\logs\armory-cli-temp.log
+
+2024-05-29 17:04:42,152 - INFO - armory get 执行结果：
+Using repository: http://10.12.1.170:3001(QA)
+Downloading package @0401/1408@0.0.1...
+
+Progress bar is disabled.
+Download is completed!
+
+2024-05-29 17:04:42,154 - INFO - @0401 删除成功
+2024-05-29 17:04:45,653 - INFO - armory search @armory/armory-cli 执行结果见Picture目录下对应文件名截图
+2024-05-29 17:04:46,650 - INFO - armory dep -h 执行结果：
+Usage: armory dep [options] [command]
+
+Manager package version dependency.
+
+Options:
+  -h, --help                        display help for command
+
+Commands:
+  ls <package-spec (with version)>  Show target package version dependencies
+                                    list.
+  help [command]                    display help for command
+
+2024-05-29 17:04:47,041 - INFO - armory dep ls 执行结果：
+Using repository: http://10.12.1.170:3001(QA)
+Dependency list: 
+aaa@0.0.1
+
+
+2024-05-29 17:04:47,408 - INFO - armory tag -h 执行结果：
+Usage: armory tag [options] [command]
+
+Manage package dist-tag
+
+Options:
+  -h, --help                               display help for command
+
+Commands:
+  add <package-spec (with version)> <tag>  Add package dist-tag
+  ls <packageName (with namespace)>        List package dist-tags
+  rm <packageName (with namespace)> <tag>  Remove package dist-tags
+  help [command]                           display help for command
+
+2024-05-29 17:04:50,889 - INFO - armory tag ls  @armory/armory-cli 执行结果见Picture目录下对应文件名截图
+2024-05-29 17:04:51,601 - INFO - armory tag ls 执行结果：
+Config changed username : zhouli => 
+Config changed access_token : *** => 
+Logout succeed!
+
+2024-05-29 17:04:51,601 - INFO - -------------------本次测试完成-------------------
