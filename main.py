@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 import shutil
 import subprocess
 import sys
@@ -7,10 +6,8 @@ import logging
 import time
 import pyautogui
 
-
 def armory_linux_cmd1():
     pass
-
 
 def armory_win_cmd1():
     pass
@@ -68,7 +65,9 @@ def armory_repo_ls_win():
 #需要继续调试
 def armory_repo_ls_linux():
     # armory 的repo 管理
+    
     armory_repo_ls=subprocess.getoutput("armory repo ls")
+    print("armory_repo_ls:",armory_repo_ls)
     logging.info('armory repo ls 执行结果：%s', armory_repo_ls)
 
 def armory_repo_use():
@@ -132,7 +131,8 @@ def armory_search_win():
 def armory_search_linux():
     # armory search 搜索软件包  暂时有点兼容性问题
     armory_search_armory_cli=subprocess.getoutput("armory search @armory/armory-cli")
-    logging.info('armory publish 执行结果：%s', armory_search_armory_cli)
+    print("armory_search_armory_cli:",armory_search_armory_cli)
+    logging.info('armory search 执行结果：%s', armory_search_armory_cli)
 
 def armory_dep():
     # armory dep 帮助信息
@@ -156,21 +156,20 @@ def armory_tag_ls_win():
 
 def armory_tag_ls_linux():
     # armory tag 查看软件包tag
-    armory_tag_ls=subprocess.call("armory tag ls  @armory/armory-cli")
+    armory_tag_ls=subprocess.getoutput("armory tag ls  @armory/armory-cli")
+    print("armory_tag_ls:",armory_tag_ls)
     logging.info('armory  tag ls 执行结果：%s', armory_tag_ls)
 
 def armory_logout():
     # armory logout 退出登录
     armory_logout1 = subprocess.getoutput("armory logout")
-    logging.info('armory tag ls 执行结果：%s', armory_logout1)
-
-def armory_win_cmd():
-    print("cmd 在 windows 测试开始")
-    # 执行 armory命令
+    logging.info('armory logout 执行结果：%s', armory_logout1)
+def armory_step1():
     armory_help()
     armory_v()
     armory_init()
-    armory_repo_ls_win()
+
+def armory_step2():
     armory_repo_use()
     armory_login()
     armory_whoami()
@@ -178,35 +177,38 @@ def armory_win_cmd():
     armory_version()
     armory_publish()
     armory_get()
-    armory_search_win()
+
+def armory_step3():
     armory_dep()
     armory_tag_h()
-    armory_tag_ls_win()
+
+def armory_step4():
     armory_logout()
+
+def armory_win_cmd():
+    print("cmd 在 windows 测试开始")
+    # 执行 armory命令
+    armory_step1()
+    armory_repo_ls_win()
+    armory_step2()
+    armory_search_win()
+    armory_step3()
+    armory_tag_ls_win()
+    armory_step4()
     logging.info('-------------------本次 win 测试完成-------------------')
 
 
 def armory_linux_cmd():
     print("cmd 在 linux 测试开始")
     # 执行 armory命令
-    armory_help()
-    armory_v()
-    armory_init()
+    armory_step1()
     armory_repo_ls_linux()
-    armory_repo_use()
-    armory_login()
-    armory_whoami()
-    armory_config()
-    armory_version()
-    armory_publish()
-    armory_get()
+    armory_step2()
     armory_search_linux()
-    armory_dep()
-    armory_tag_h()
+    armory_step3()
     armory_tag_ls_linux()
-    armory_logout()
+    armory_step4()
     logging.info('-------------------本次 linux 系统测试完成-------------------')
-
 
 def armory_win_powershell():
     print("powershell 在windows 测试开始")
@@ -214,7 +216,6 @@ def armory_win_powershell():
 
 def armory_win_gitbash():
     print("gitbash 在windows 测试开始")
-
 
 def armory_win():
     print("在 windows 测试开始")
@@ -229,7 +230,7 @@ def armory_linux():
 if __name__ == '__main__':
     timestamp = int(time.time())
     logging.basicConfig(filename='./LOG/' + 'armory-' + str(timestamp) + '.log', level=logging.DEBUG,
-                        format='%(asctime)s - %(levelname)s - %(message)s', encoding='utf-8')
+                        format='%(asctime)s - %(levelname)s - %(message)s', encoding='UTF-8')
 
     if sys.platform.startswith('win'):
         print("当前是: Windows 操作系统")
